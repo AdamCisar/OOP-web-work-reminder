@@ -1,6 +1,8 @@
 <?php
 
-include 'grab.php';
+//include 'grab.php';
+//include 'view.php';
+include 'model.php';
 ?>
 
 
@@ -36,13 +38,29 @@ include 'grab.php';
             <th>Meno</th>
             <th>Miesto</th>
             <th>Dátum</th>
-         
+         <?php
+           
+//            while($row =  mysqli_fetch_assoc($result)){
+//
+//            echo '<tr>';
+//            echo "<td>".$row['name'].'</td><td>'.$row['place'].'</td><td>'.$row['date'].'</td>';    
+//
+//            echo '<td class="button"> 
+//            <button type="submit" name="id" value="'.$row['id'].'">Odstrániť</button></td>';
+//            echo '</tr>';
+//            } 
+                
+            ?>
         </table>
       </form>    
       </div>
    </div>  
-
-   
+            <?php    
+            $obj = new Model();
+            $result = $obj->getTasks();
+            echo $result;
+            
+   ?>
 
 </body>
 </html>

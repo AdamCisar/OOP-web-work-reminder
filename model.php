@@ -14,4 +14,16 @@ class Model extends Dbh {
         
     }
 
-} 
+    public function getTasks(){
+        
+     $stmt = $this->connect()->query("SELECT * FROM tasks");
+     while($row = $stmt->fetchAll()){
+         $name = $row[0]['name'];
+         $place = $row[0]['place'];
+         $dates = $row[0]['dates'];
+         $result = $name.$place.$dates;
+         return $stmt;
+     }
+ }
+}
+ 

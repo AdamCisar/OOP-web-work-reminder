@@ -14,7 +14,7 @@ class Model extends Dbh {
         
     }
 
-    public function getTasks(){
+    protected function getTasks(){
         
      $stmt = $this->connect()->query("SELECT * FROM tasks");
      return $stmt;

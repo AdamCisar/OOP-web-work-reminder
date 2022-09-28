@@ -1,6 +1,6 @@
 <?php
 
-include 'model.php';
+include 'view.php';
 ?>
 
 
@@ -37,8 +37,8 @@ include 'model.php';
             <th>Miesto</th>
             <th>Dátum</th>
          <?php
-        $obj = new Model();
-        $result = $obj->getTasks();
+        $obj = new View();
+        $result = $obj->showdata();    
         $row = $result->fetchAll();
         $count = count($row);
         $num = 0;    

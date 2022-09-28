@@ -16,4 +16,6 @@ if(isset($_POST['submit'])){
     $addrow->addtask();
     
     header("location: index.php?error=none");
+    
+
 }

@@ -1,11 +1,12 @@
 <?php
-require_once 'model.php';
+include 'model.php';
 
 
 class View extends Model{
     
     public function showdata(){
-        $this->getTasks();
+      $this->getTasks();
+    return $this->getTasks();
         
     }
 }

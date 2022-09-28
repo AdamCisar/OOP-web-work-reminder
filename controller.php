@@ -12,7 +12,9 @@ class Controller extends Model{
         $this->dates = $dates;
     }
     
-    public function addtask(){    
+    public function addTask(){    
         $this->add($this->name,$this->place,$this->dates);
     }
+    
+    
 }

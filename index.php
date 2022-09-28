@@ -48,7 +48,7 @@ include 'view.php';
             echo "<td>".$row[$num]['name'].'</td><td>'.$row[$num]['place'].'</td><td>'.$row[$num]['dates'].'</td>';    
 
             echo '<td class="button"> 
-            <button type="submit" name="id" value="'.$row[$num]['id'].'">Odstrániť</button></td>';
+            <button type="submit" name="delete" value="'.$row[$num]['id'].'">Odstrániť</button></td>';
             echo '</tr>';
             $num = $num + 1;
             } 

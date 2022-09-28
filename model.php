@@ -19,5 +19,15 @@ class Model extends Dbh {
      $stmt = $this->connect()->query("SELECT * FROM tasks");
      return $stmt;
  }
+    protected function delete($id){
+        $stmt = $this->connect()->prepare("DELETE FROM tasks WHERE id = '$id'");
+        
+        if(!$stmt->execute(array($id))){
+        $stmt = null;
+        header("location: index.php?error=stmtfailed");
+        exit();
+        }
+
+    }
 }
  

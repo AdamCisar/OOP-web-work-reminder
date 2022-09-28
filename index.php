@@ -1,7 +1,5 @@
 <?php
 
-//include 'grab.php';
-//include 'view.php';
 include 'model.php';
 ?>
 
@@ -39,28 +37,26 @@ include 'model.php';
             <th>Miesto</th>
             <th>Dátum</th>
          <?php
-           
-//            while($row =  mysqli_fetch_assoc($result)){
-//
-//            echo '<tr>';
-//            echo "<td>".$row['name'].'</td><td>'.$row['place'].'</td><td>'.$row['date'].'</td>';    
-//
-//            echo '<td class="button"> 
-//            <button type="submit" name="id" value="'.$row['id'].'">Odstrániť</button></td>';
-//            echo '</tr>';
-//            } 
-                
+        $obj = new Model();
+        $result = $obj->getTasks();
+        $row = $result->fetchAll();
+        $count = count($row);
+        $num = 0;    
+        for($i = 0; $i < $count; $i++){   
+            
+            echo '<tr>';
+            echo "<td>".$row[$num]['name'].'</td><td>'.$row[$num]['place'].'</td><td>'.$row[$num]['dates'].'</td>';    
+
+            echo '<td class="button"> 
+            <button type="submit" name="id" value="'.$row[$num]['id'].'">Odstrániť</button></td>';
+            echo '</tr>';
+            $num = $num + 1;
+            } 
+        
             ?>
         </table>
       </form>    
       </div>
    </div>  
-            <?php    
-            $obj = new Model();
-            $result = $obj->getTasks();
-            echo $result;
-            
-   ?>
-
 </body>
 </html>
